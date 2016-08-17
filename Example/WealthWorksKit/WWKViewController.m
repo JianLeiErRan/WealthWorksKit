@@ -20,6 +20,9 @@
     [super viewDidLoad];
     
     [self testCommonService];
+    
+    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(checkNetworkStatus) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:timer forMode:NSRunLoopCommonModes];
 }
 
 - (IBAction)jumpToOtherController:(id)sender {
@@ -36,6 +39,10 @@
     [WWKCommonService checkAppUpdateWithSuccess:^(NSURLSessionDataTask *task, WWKAppUpdateInfo *appUpdateInfo) {
     } failure:^(NSURLSessionDataTask *task, NSError *error) {
     }];
+}
+
+- (void)checkNetworkStatus {
+    NSLog(@"%@", [WWKReachability wwk_isReachable] ? @"YES": @"NO");
 }
 
 @end

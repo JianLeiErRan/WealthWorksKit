@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   # s.license        = { :type => 'MIT', :file => 'LICENSE' }
 
   s.ios.deployment_target = '8.0'
-  s.requires_arc = true
+  # s.requires_arc = true
 
   s.source = { :git => 'https://github.com/wealthworks/WealthWorksKit.git' }
 
@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
     ss.source_files        = 'WealthWorksKit/Classes/Network/*.{h,m}'
     ss.public_header_files = 'WealthWorksKit/Classes/Network/*.h'
     ss.dependency            'AFNetworking', '~> 3.0'
+    ss.dependency            'Reachability'
   end
 
   s.subspec 'Navigator' do |ss|

@@ -22,3 +22,4 @@ FOUNDATION_EXPORT const unsigned char WealthWorksKitVersionString[];
 
 #import <WealthWorksKit/WWKCommonService.h>
 #import <WealthWorksKit/WWKURLNavigator.h>
+#import <WealthWorksKit/WWKReachability.h>
